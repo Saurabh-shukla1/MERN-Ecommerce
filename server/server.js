@@ -14,7 +14,7 @@ import shopReviewRouter from './routes/shop/review-routes.js';
 import commonFeatureRouter from './routes/common/feature-routes.js';
 
 
-connect(process.env.MONGODB_URI || "mongodb+srv://saurabhshukla6392:saurabhshukla6392@cluster0.87eaobd.mongodb.net/")
+connect(process.env.MONGODB_URI)
 .then(() => console.log("MongoDB connected successfully"))
 .catch(err => console.error("MongoDB connection error:", err));
 

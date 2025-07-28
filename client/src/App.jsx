@@ -24,6 +24,7 @@ import PaypalReturn from './pages/shopping/paypal-return';
 import PaymentSuccessPage from './pages/shopping/payment-sucess';
 import { ToastContainer } from 'react-toastify';
 import SearchProducts from './pages/shopping/serach';
+import LandingPage from './pages/landingPage';
 
 
 function App() {
@@ -44,6 +45,11 @@ function App() {
       {/* <h1>Header components</h1> */}
 
       <Routes>
+        <Route path="/" element={
+          <CheckAuth isAuthenticated={false} user={null}>
+            <LandingPage />
+          </CheckAuth>
+        } />
         <Route path="/auth" element={
           <CheckAuth isAuthenticated={isAuthenticated} user={user}>
             <AuthLayout />
