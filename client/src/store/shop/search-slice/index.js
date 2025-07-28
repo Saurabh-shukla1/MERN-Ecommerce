@@ -1,0 +1,44 @@
+
+import axios from "axios";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+const initialState = {
+    searchResults: [],
+    isLoading: false,
+}
+
+
+export const getSearchResults = createAsyncThunk(
+    'search/getSearchResults',
+    async (keyword) => {
+        const response = await axios.get(`http://localhost:5000/api/shop/search/${keyword}`);
+        return response.data;
+    }
+)
+
+
+const SearchSlice = createSlice({
+    name: 'searchSlice',
+    initialState,
+    reducers: {
+        resetSearchResults: (state) => {
+            state.searchResults = [];
+        }
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(getSearchResults.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(getSearchResults.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.searchResults = action.payload.data;
+            })
+            .addCase(getSearchResults.rejected, (state) => {
+                state.isLoading = false;
+                state.searchResults = [];
+            });
+    }
+})
+export const { resetSearchResults } = SearchSlice.actions;
+export default SearchSlice.reducer;
