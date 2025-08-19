@@ -32,9 +32,13 @@ const Login = () =>{
     }
 
     return (
+        <>
         <div className="mx-auto w-full max-w-md space-y-6">
             <div className="text-center">
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">Login to Your Account</h1>
+                
+                <h1 className="text-2xl font-bold tracking-tight text-foreground">
+                    <img src="/logo.svg" alt="Logo" className="flex text-center items-center justify-center h-15 w-15 gap-0 mx-auto mb-0.5" />
+                    Login to Your Account</h1>
                 <p className="mt-2 text-sm text-muted-foreground">
                     Don't have an account?{' '}
                     <a href="/auth/register" className="font-semibold text-primary hover:text-primary/80">
@@ -50,6 +54,7 @@ const Login = () =>{
                 setFormData={setFormData}  
             />
         </div>
+        </>
     )
 }
 

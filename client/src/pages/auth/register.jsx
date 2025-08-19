@@ -36,7 +36,9 @@ const Register = () =>{
     return (
         <div className="mx-auto w-full max-w-md space-y-6">
             <div className="text-center">
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">Create an Account</h1>
+                <h1 className="text-2xl font-bold tracking-tight text-foreground">
+                    <img src="/logo.svg" alt="Logo" className="flex text-center items-center justify-center h-15 w-15 gap-0 mx-auto mb-0.5" />
+                    Create an Account</h1>
                 <p className="mt-2 text-sm text-muted-foreground">
                     Already have an account?{' '}
                     <a href="/auth/login" className="font-semibold text-primary hover:text-primary/80">
