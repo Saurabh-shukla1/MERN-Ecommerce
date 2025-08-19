@@ -38,7 +38,7 @@ const MenuItems = () => {
                 <Label
                 onClick={() => handleNavigate(menuItems)}
                 key={menuItems.id} 
-                className="text-sm font-medium text-primary ml-2 lg:mb-0 cursor-pointer hover:underline hover:underline-offset-4 hover:text-black">
+                className="text-sm font-medium text-primary ml-2 lg:mb-0 cursor-pointer hover:underline hover:underline-offset-4 hover:text-primary">
                     {menuItems.label}
                 </Label>
             ))
@@ -114,8 +114,8 @@ const ShoppingHeader = () => {
         <header className="sticky top-0 z-40 w-full border-b bg-background">
             <div className="flex h-16 items-center justify-between px-4 ms:px-6">
                 <Link className="flex items-center gap-2" to="/shop/home">
-                    <img src={logo} alt="Logo" className="h-20 w-20 gap-0 mr-0" />
-                    <span className="font-bold">ECommerce</span>
+                    <img src='/logo.svg' alt="Logo" className="h-10 w-10 gap-0 mr-0" />
+                    <span className="font-bold text-primary">ECommerce</span>
                 </Link>
                 <Sheet>
                     <SheetTrigger asChild>
