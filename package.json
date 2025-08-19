@@ -1,0 +1,40 @@
+{
+  "name": "mern-ecommerce",
+  "version": "1.0.0",
+  "description": "A full-stack e-commerce application built with the MERN stack",
+  "main": "server/server.js",
+  "scripts": {
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "install-all": "npm run install-server && npm run install-client",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saurabh-shukla1/MERN-Ecommerce.git"
+  },
+  "keywords": [
+    "react",
+    "nodejs",
+    "mongodb",
+    "express",
+    "ecommerce",
+    "mern",
+    "tailwindcss",
+    "redux",
+    "paypal",
+    "cloudinary"
+  ],
+  "author": "Saurabh Shukla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saurabh-shukla1/MERN-Ecommerce/issues"
+  },
+  "homepage": "https://github.com/Saurabh-shukla1/MERN-Ecommerce#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
