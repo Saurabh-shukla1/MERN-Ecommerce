@@ -1,8 +1,12 @@
+import dotenv from 'dotenv';
 import express, { json } from 'express';
 import { connect } from 'mongoose';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import router from './routes/auth/auth-route.js';
+
+dotenv.config();
+
 import adminProductsRouter from './routes/admin/products-routes.js';
 import shopProductsRouter from './routes/shop/products-routes.js';
 import shopCartRouter from './routes/shop/cart-routes.js';
@@ -24,7 +28,7 @@ const port = process.env.PORT || 5000;
 
 app.use(
     cors({
-        origin: 'http://localhost:5173', // Adjust this to your frontend URL
+        origin: process.env.CLIENT_BASE_URL, // Adjust this to your frontend URL
         credentials: true, // Allow cookies to be sent
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         allowedHeaders: [

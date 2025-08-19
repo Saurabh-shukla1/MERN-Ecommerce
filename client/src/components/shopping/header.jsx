@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { fetchCartItem } from "@/store/shop/cart-slice";
 import { Label } from "../ui/label";
 import logo from '../../assets/logo.PNG'
+import { ModeToggle } from "../theme/mode-toggle";
 
 const MenuItems = () => {
     const navigate = useNavigate();
@@ -37,7 +38,7 @@ const MenuItems = () => {
                 <Label
                 onClick={() => handleNavigate(menuItems)}
                 key={menuItems.id} 
-                className="text-sm font-medium text-gray-700 ml-2 lg:mb-0 cursor-pointer hover:underline hover:underline-offset-4 hover:text-black">
+                className="text-sm font-medium text-primary ml-2 lg:mb-0 cursor-pointer hover:underline hover:underline-offset-4 hover:text-black">
                     {menuItems.label}
                 </Label>
             ))
@@ -66,6 +67,7 @@ const HeaderRightContent = () => {
 
     return <div className="flex lg:items-center lg:flex-row flex-row ml-2 lg:ml-0 gap-4">
         <Sheet open={openCartSheet} onOpenChange={() => setOpenCartSheet(false)}>
+            {/* <ModeToggle /> */}
             <Button 
             onClick={() => setOpenCartSheet(true)} 
             variant='outline' 
@@ -102,6 +104,7 @@ const HeaderRightContent = () => {
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
+        <ModeToggle />
     </div>
 }
 

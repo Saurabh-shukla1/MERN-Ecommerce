@@ -25,6 +25,7 @@ import PaymentSuccessPage from './pages/shopping/payment-sucess';
 import { ToastContainer } from 'react-toastify';
 import SearchProducts from './pages/shopping/serach';
 import LandingPage from './pages/landingPage';
+import { ThemeProvider } from './components/theme/theme-provider';
 
 
 function App() {
@@ -41,9 +42,9 @@ function App() {
   if (isLoading) return <div className='w-fill justify-center items-center p-4'><Progress value={75} /></div>
 
   return (
-    <div className='flex flex-col overflow-hidden bg-white'>
+    <div className='flex flex-col overflow-hidden bg-background'>
       {/* <h1>Header components</h1> */}
-
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Routes>
         <Route path="/" element={
           <CheckAuth isAuthenticated={false} user={null}>
@@ -87,6 +88,7 @@ function App() {
         <Route path='/unAuth-page' element={<UnAuthPage />} />
       </Routes>
       <ToastContainer position="bottom-right" autoClose={3000} hideProgressBar={false} newestOnTop/>
+      </ThemeProvider>
     </div>
   )
 }
