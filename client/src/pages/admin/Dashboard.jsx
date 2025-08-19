@@ -51,7 +51,6 @@ const AdminDashboard = () => {
                 imageLoadingState={imageLoadingState}
                 setImageLoadingState={setImageLoadingState}
                 isCustomStyling={true}
-                //isEditMode={currentEditedId !== null}
                 />
         <Button onClick={handleUploadFeatureImage} className={`mt-4 w-3/4 ${!uploadedImageUrl ? "cursor-not-allowed" : "cursor-pointer"}`} 
         disabled={!uploadedImageUrl}>Upload Image</Button>
