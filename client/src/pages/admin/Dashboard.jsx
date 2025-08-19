@@ -1,7 +1,7 @@
 import ProductImageUpload from "@/components/admin/image-upload";
 import { Button } from "@/components/ui/button";
 import { addFeatureImage, deleteFeatureImage, getFeatureImage } from "@/store/admin/feature-slice";
-import { Cross, CrossIcon, Trash, WormIcon } from "lucide-react";
+import { Trash } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
